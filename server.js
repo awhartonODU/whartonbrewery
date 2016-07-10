@@ -17,6 +17,11 @@ app.set('views', __dirname + '/views');
 app.use('/images', express.static('images'));
 app.use('/beers', express.static('beers'));
 
+if(request.headers.host =="whartonbrewery.com") {
+    response.writeHead(301, {'Location':'http://www.whartonbrewery.com'+ request.url, 'Expires': (new Date).toGMTString()});
+    response.end();
+}
+
 app.get('/', function(req, res){
   res.render('index', {
     title: 'Wharton Homebrew',
