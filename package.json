@@ -1,9 +1,14 @@
 {
   "name" : "whartonbrewery",
   "version" : "0.0.1",
+  "main": "server.js",
   "scripts" : {
     "start" : "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/awhartonODU/whartonbrewery.git"
+  },  
   "dependencies" : {
     "express" : "latest",
     "jade": "latest",
