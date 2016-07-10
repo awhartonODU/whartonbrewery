@@ -43,8 +43,7 @@ app.get('/beer', function(req, res){
 });
 
 app.get('/checkin', function (req, res) {
-    var drinker = req.query.drinker.replace(/ /g, '_');
-    return checkinBeer(req.query.beer, drinker)
+    return checkinBeer(req.query.beer)
         .then(function(beer) {
             fs.writeFileSync('./beers.js', "exports.beers = " + JSON.stringify(beers));    
             res.redirect("http://www.untappd.com/b/wharton-brewery-" + req.query.untappd_slug + "/" + req.query.untappd_id);
@@ -68,16 +67,10 @@ function getBeerDetailFromUntappd (bid) {
     });
 }
 
-function checkinBeer (beer, drinker) {
+function checkinBeer (beer) {
     var beer = beers[beer];
 
     beer.stock--;
-    if(!beer.drinkers[drinker]) {
-        beer.drinkers[drinker] = 1;
-    }
-    else {
-        beer.drinkers[drinker]++;
-    }
 
     return new BPromise(function (resolve, reject) {
         resolve();
