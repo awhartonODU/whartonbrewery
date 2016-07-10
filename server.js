@@ -6,7 +6,8 @@ var express = require('express'),
     untappd_client_id = '34FAA84221D10BA443772D524F3370E6495CDA2A',
     untappd_client_secret = '46A6ED857EFDE06ED5F33E9824CBFA6029ED44FF',
     untappd_beer_info_url = 'https://api.untappd.com/v4/beer/info/',
-    BPromise = require('bluebird');
+    BPromise = require('bluebird'),
+    fs = require('fs');
 
 // assign the swig engine to .html files
 app.engine('jade', cons.jade);
@@ -18,10 +19,6 @@ app.use('/images', express.static('images'));
 app.use('/beers', express.static('beers'));
 
 app.get('/', function(req, res){
-    // if(req.headers.host =="whartonbrewery.com") {
-    //     res.writeHead(301, {'Location':'http://www.whartonbrewery.com'+ request.url, 'Expires': (new Date).toGMTString()});
-    //     res.end();
-    // }
     res.render('index', {
         title: 'Wharton Homebrew',
         beers: beers
@@ -45,6 +42,15 @@ app.get('/beer', function(req, res){
         });
 });
 
+app.get('/checkin', function (req, res) {
+    var drinker = req.query.drinker.replace(/ /g, '_');
+    return checkinBeer(req.query.beer, drinker)
+        .then(function(beer) {
+            fs.writeFileSync('./beers.js', "exports.beers = " + JSON.stringify(beers));    
+            res.redirect("http://www.untappd.com/b/wharton-brewery-" + req.query.untappd_slug + "/" + req.query.untappd_id);
+        });
+});
+
 app.listen(process.env.PORT || 3000);
 console.log('Express server listening on port 3000');
 
@@ -60,4 +66,20 @@ function getBeerDetailFromUntappd (bid) {
             resolve(payload.response.beer);
         });
     });
+}
+
+function checkinBeer (beer, drinker) {
+    var beer = beers[beer];
+
+    beer.stock--;
+    if(!beer.drinkers[drinker]) {
+        beer.drinkers[drinker] = 1;
+    }
+    else {
+        beer.drinkers[drinker]++;
+    }
+
+    return new BPromise(function (resolve, reject) {
+        resolve();
+    });   
 }
