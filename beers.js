@@ -1,14 +1,36 @@
 exports.beers = {
-    gvh15: {
-        name: 'Guber von Homer (2015)',
-        description: '"First all-grain brew. Hefeweizen with red malt and liberty hops."',
+    seymour_dbeers: {
+        name: 'Seymour d\'beers',
+        description: '"Tailgate series -- Southern Miss. Golden with pale and vienna malt. Citra hops. Go ODU!"',
+        style: 'Golden Ale',
+        slug: 'seymour_dbeers',
+        status: 'Not Yet Brewed',
+        logo: './images/placeholder.png',
+        abv: 'TBD',
+        recipe: './beers/seymour_dbeers.html',
+        untappd_id: 0        
+    },    
+    yoot_suh: {
+        name: 'Yoot Suh',
+        description: '"Tailgate series -- UTSA. American amber with pale, munich, and crystal malt. Magnum and cascade hops. Go ODU!"',
+        style: 'American Amber',
+        slug: 'yoot_suh',
+        status: 'Primary',
+        logo: './images/placeholder.png',
+        abv: 'TBD',
+        recipe: './beers/yoot_suh.html',
+        untappd_id: 0
+    },    
+    gvh16: {
+        name: 'Guber von Homer (2016)',
+        description: '"This year\'s version. Same grain, less hops. Also used hallertau instead of liberty."',
         style: 'Hefeweizen',
-        slug: 'gvh15',
-        abv: '5.7%',
-        status: 'Out of Stock',
+        slug: 'gvh16',
+        abv: '5.0%',
+        status: 'Bottled',
         logo: 'images/gvh.png',
-        untappd_id: 401874
-    },
+        untappd_id: 1625199
+    },    
     charlie: {
         name: 'Charlie & the Gingerbread Factory',
         description: '"Christmas-flavored spiced beer, perfect for the holidays."',
@@ -50,36 +72,14 @@ exports.beers = {
         logo: './images/placeholder.png',
         untappd_id: 0
     },
-    gvh16: {
-        name: 'Guber von Homer (2016)',
-        description: '"This year\'s version. Same grain, less hops. Also used hallertau instead of liberty."',
+    gvh15: {
+        name: 'Guber von Homer (2015)',
+        description: '"First all-grain brew. Hefeweizen with red malt and liberty hops."',
         style: 'Hefeweizen',
-        slug: 'gvh16',
-        abv: '5.0%',
-        status: 'Bottled',
+        slug: 'gvh15',
+        abv: '5.7%',
+        status: 'Out of Stock',
         logo: 'images/gvh.png',
-        untappd_id: 1625199
+        untappd_id: 401874
     },
-    yoot_suh: {
-        name: 'Yoot Suh',
-        description: '"Tailgate series -- UTSA. American amber with pale, munich, and crystal malt. Magnum and cascade hops. Go ODU!"',
-        style: 'American Amber',
-        slug: 'yoot_suh',
-        status: 'Primary',
-        logo: './images/placeholder.png',
-        abv: 'TBD',
-        recipe: './beers/yoot_suh.html',
-        untappd_id: 0
-    },
-    seymour_dbeers: {
-        name: 'Seymour d\'beers',
-        description: '"Tailgate series -- Southern Miss. Golden with pale and vienna malt. Citra hops. Go ODU!"',
-        style: 'Golden Ale',
-        slug: 'seymour_dbeers',
-        status: 'Not Yet Brewed',
-        logo: './images/placeholder.png',
-        abv: 'TBD',
-        recipe: './beers/seymour_dbeers.html',
-        untappd_id: 0        
-    }
 };
