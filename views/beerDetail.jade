@@ -1,0 +1,42 @@
+include mixins
+
+.beer(style="width:50%;margin:0 auto;")
+    .page-header
+    h1(style="text-align:center;")
+        | !{beer.name} <br>
+        small !{beer.style} <br>
+        h4(style="text-align:center;")
+            small !{beer.description}
+    .beer-main(style="width:45%;margin:0 auto;")
+        img(src=beer.logo, height=300, width=300, style='max-width:100%;height:auto')
+        <br>
+    h4(style="text-align:center;")
+        | Status: !{beer.status} <br>
+        unless !beer.recipe
+            a(href=beer.recipe) Recipe <br>
+    block content
+    <h3> Checkins on Untappd </h3>
+    unless !beer_detail
+        +listGroup('link')
+            for checkin in beer_detail.checkins.items
+                unless checkin.checkin_comment.length == 0
+                    +listItem(checkin.user.user_link)
+                        +listHeading 
+                        <img width=50px height=50px src=!{checkin.user.user_avatar}> <strong>!{checkin.user.first_name} !{checkin.user.last_name}</strong> - <small>!{checkin.created_at.substring(0, checkin.created_at.length - 14)}</small>
+                        <br>
+                        - var fullStars = checkin.rating_score.toString().split('.')[0]
+                        - var otherStars = checkin.rating_score.toString().split('.')[1] || '0'
+                        - var remainder = 5 - Math.ceil(checkin.rating_score)
+                        - for (var x = 0; x < fullStars ; x++)
+                            <img width = 20px, height = 20px, src = './images/1_0.png'>
+                        unless otherStars === '0'
+                            - var imgString = './images/0_' + otherStars + '.png'
+                            <img width = 20px, height = 20px, src = !{imgString}>
+                        - for (var x = 0; x < remainder ; x++)
+                            <img width = 20px, height = 20px, src = './images/0.png'>
+                        <br>!{checkin.checkin_comment} 
+                        for comment in checkin.comments.items
+                            +listItem
+                                <img width=50px height=50px src=!{comment.user.user_avatar}> <strong>!{comment.user.first_name} !{comment.user.last_name}</strong> - <small>!{comment.created_at.substring(0, comment.created_at.length - 14)}</small>
+                                <br>!{comment.comment}
+                

@@ -1,0 +1,8 @@
+html
+    include header
+    body
+        +nav("Wharton Brewery", "dropdown_menu")
+            +nav_item_dropdown( label="Beer List")
+                for beer in beers 
+                    +nav_item('/beer?b=' + beer.slug) !{beer.name}
+        block content            

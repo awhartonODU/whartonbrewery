@@ -1,0 +1,9 @@
+include mixins
+extends layout
+
+block content
+  h1 Beers
+  #beers
+    +listGroup("links")
+    for beer in beers
+      include beerListItem
