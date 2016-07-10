@@ -18,10 +18,10 @@ app.use('/images', express.static('images'));
 app.use('/beers', express.static('beers'));
 
 app.get('/', function(req, res){
-    if(req.headers.host =="whartonbrewery.com") {
-        res.writeHead(301, {'Location':'http://www.whartonbrewery.com'+ request.url, 'Expires': (new Date).toGMTString()});
-        res.end();
-    }
+    // if(req.headers.host =="whartonbrewery.com") {
+    //     res.writeHead(301, {'Location':'http://www.whartonbrewery.com'+ request.url, 'Expires': (new Date).toGMTString()});
+    //     res.end();
+    // }
     res.render('index', {
         title: 'Wharton Homebrew',
         beers: beers
