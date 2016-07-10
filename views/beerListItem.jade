@@ -1,6 +1,6 @@
 .beer
     +listItem('/beer?b=' + beer.slug) <strong>!{beer.name}</strong>
         +listHeading <strong>Style:</strong> !{beer.style}
-        +listHeading <strong>Status:</strong> !{beer.status}
+        +listHeading <strong>Stock:</strong> !{beer.stock}
         +listHeading <strong>ABV:</strong> !{beer.abv}
         img(src=beer.logo, height=171, width=180)

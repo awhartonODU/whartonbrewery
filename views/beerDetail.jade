@@ -11,7 +11,7 @@ include mixins
         img(src=beer.logo, height=300, width=300, style='max-width:100%;height:auto')
         <br>
     h4(style="text-align:center;")
-        | Status: !{beer.status} <br>
+        | Stock: !{beer.stock} <br>
         unless !beer.recipe
             a(href=beer.recipe) Recipe <br>
     block content
