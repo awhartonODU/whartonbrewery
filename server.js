@@ -17,16 +17,15 @@ app.set('views', __dirname + '/views');
 app.use('/images', express.static('images'));
 app.use('/beers', express.static('beers'));
 
-if(request.headers.host =="whartonbrewery.com") {
-    response.writeHead(301, {'Location':'http://www.whartonbrewery.com'+ request.url, 'Expires': (new Date).toGMTString()});
-    response.end();
-}
-
 app.get('/', function(req, res){
-  res.render('index', {
-    title: 'Wharton Homebrew',
-    beers: beers
-  });
+    if(req.headers.host =="whartonbrewery.com") {
+        res.writeHead(301, {'Location':'http://www.whartonbrewery.com'+ request.url, 'Expires': (new Date).toGMTString()});
+        res.end();
+    }
+    res.render('index', {
+        title: 'Wharton Homebrew',
+        beers: beers
+    });
 });
 
 app.get('/beer', function(req, res){
