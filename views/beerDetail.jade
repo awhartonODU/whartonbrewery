@@ -7,11 +7,11 @@ include mixins
         small !{beer.style} <br>
         h4(style="text-align:center;")
             small !{beer.description}
-    .beer-main(style="width:45%;margin:0 auto;")
-        img(src=beer.logo, height=300, width=300, style='max-width:100%;height:auto')
+    .beer-main(style="width:50%;margin:0 auto;")
+        img(src=beer.logo, style='max-width:100%;height:auto')
         <br>
     h4(style="text-align:center;")
-        | Stock: !{beer.stock} <br>
+        | Status: !{beer.status} <br>
         unless !beer.recipe
             a(href=beer.recipe) Recipe <br>
     block content

@@ -42,14 +42,6 @@ app.get('/beer', function(req, res){
         });
 });
 
-app.get('/checkin', function (req, res) {
-    return checkinBeer(req.query.beer)
-        .then(function(beer) {
-            fs.writeFileSync('./beers.js', "exports.beers = " + JSON.stringify(beers));    
-            res.redirect("http://www.untappd.com/b/wharton-brewery-" + req.query.untappd_slug + "/" + req.query.untappd_id);
-        });
-});
-
 app.listen(process.env.PORT || 3000);
 console.log('Express server listening on port 3000');
 
@@ -65,14 +57,4 @@ function getBeerDetailFromUntappd (bid) {
             resolve(payload.response.beer);
         });
     });
-}
-
-function checkinBeer (beer) {
-    var beer = beers[beer];
-
-    beer.stock--;
-
-    return new BPromise(function (resolve, reject) {
-        resolve();
-    });   
 }
