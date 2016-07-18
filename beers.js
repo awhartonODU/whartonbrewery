@@ -1,10 +1,10 @@
 exports.beers = {
     nansemond_smoke: {
         name: 'Nansemond Smoke',
-        description: '"Cherrywood smoked lager with a serious smoked grain profile. First lager attempt."',
+        description: '"Cherrywood smoked lager with a serious smoked grain profile. Tun broke mid-mash, so this one is a pseudo."',
         style: 'Cherrywood Smoked Lager',
         slug: 'nansemond_smoke',
-        status: 'Not Yet Brewed',
+        status: 'Primary',
         logo: './images/nansemond_smoke.png',
         abv: 'TBD',
         recipe: './beers/nansemond_smoke.html',
