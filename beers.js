@@ -26,9 +26,9 @@ exports.beers = {
         description: '"Tailgate series -- UTSA. American amber with pale, munich, and crystal malt. Magnum and cascade hops. Go ODU!"',
         style: 'American Amber',
         slug: 'yoot_suh',
-        status: 'Secondary',
+        status: 'Bottled',
         logo: './images/placeholder.png',
-        abv: 'TBD',
+        abv: '6.0%',
         recipe: './beers/yoot_suh.html',
         untappd_id: 0
     },
