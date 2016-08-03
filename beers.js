@@ -30,7 +30,7 @@ exports.beers = {
         logo: './images/placeholder.png',
         abv: '6.0%',
         recipe: './beers/yoot_suh.html',
-        untappd_id: 0
+        untappd_id: 1670877
     },
     gvh16: {
         name: 'Guber von Homer (2016)',
