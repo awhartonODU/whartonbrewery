@@ -1,24 +1,35 @@
 exports.beers = {
+    odc: {
+        name: 'Oh Dear Christ!',
+        description: '"Sweet Baby Jesus clone. Chocolate Peanut Butter Porter. Happy Holidays!"',
+        style: 'Porter',
+        slug: 'odc',
+        status: 'Primary',
+        logo: './images/ohdearchrist.png',
+        abv: 'TBD',
+        recipe: './beers/ohdearchrist.html',
+        untappd_id: 0
+    },
+    kb24: {
+        name: 'KB24',
+        description: '"Fall 2016 Trifecta Brown Competition Winner. Brown Ale dedicated to Kent Bazemore."',
+        style: 'Brown Ale',
+        slug: 'kb24',
+        status: 'Bottled',
+        logo: './images/kb24.png',
+        abv: '5.5',
+        recipe: './beers/kb24.html',
+        untappd_id: 0
+    },
     nansemond_smoke: {
         name: 'Nansemond Smoke',
         description: '"Cherrywood smoked lager with a serious smoked grain profile. Tun broke mid-mash, so this one is a pseudo."',
         style: 'Cherrywood Smoked Lager',
         slug: 'nansemond_smoke',
-        status: 'Primary',
+        status: 'Out of Stock',
         logo: './images/nansemond_smoke.png',
         abv: 'TBD',
         recipe: './beers/nansemond_smoke.html',
-        untappd_id: 0
-    },
-    seymour_dbeers: {
-        name: 'Seymour d\'beers',
-        description: '"Tailgate series -- Southern Miss. Golden with pale and vienna malt. Citra hops. Go ODU!"',
-        style: 'Golden Ale',
-        slug: 'seymour_dbeers',
-        status: 'Not Yet Brewed',
-        logo: './images/placeholder.png',
-        abv: 'TBD',
-        recipe: './beers/seymour_dbeers.html',
         untappd_id: 0
     },
     yoot_suh: {
@@ -26,8 +37,8 @@ exports.beers = {
         description: '"Tailgate series -- UTSA. American amber with pale, munich, and crystal malt. Magnum and cascade hops. Go ODU!"',
         style: 'American Amber',
         slug: 'yoot_suh',
-        status: 'Bottled',
-        logo: './images/placeholder.png',
+        status: 'Out of Stock',
+        logo: './images/yootsuh.png',
         abv: '6.0%',
         recipe: './beers/yoot_suh.html',
         untappd_id: 1670877
@@ -38,14 +49,14 @@ exports.beers = {
         style: 'Hefeweizen',
         slug: 'gvh16',
         abv: '5.0%',
-        status: 'Bottled',
+        status: 'Out of Stock',
         logo: 'images/gvh.png',
         recipe: './beers/gvh16.html',
         untappd_id: 1625199
     },
     charlie: {
         name: 'Charlie & the Gingerbread Factory',
-        description: '"Christmas-flavored spiced beer, perfect for the holidays."',
+        description: '"Christmas-flavored spiced beer. Winter 2016 Trifecta Porter Competition winner."',
         style: 'Gingerbread Porter',
         slug: 'charlie',
         status: 'Out of Stock',
@@ -93,5 +104,5 @@ exports.beers = {
         status: 'Out of Stock',
         logo: 'images/gvh.png',
         untappd_id: 401874
-    },
+    }
 };
