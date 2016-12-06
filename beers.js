@@ -1,4 +1,15 @@
 exports.beers = {
+    flicka: {
+        name: 'Friggin Flicka',
+        description: '"Black IPA. Details withheld for now."',
+        style: 'Black IPA',
+        slug: 'flicka',
+        status: 'Not Yet Brewed',
+        logo: './images/frigginflicka.png',
+        abv: 'TBD',
+        recipe: '#',
+        untappd_id: 0
+    },
     odc: {
         name: 'Oh Dear Christ!',
         description: '"Sweet Baby Jesus clone. Chocolate Peanut Butter Porter. Happy Holidays!"',
