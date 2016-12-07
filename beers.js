@@ -1,6 +1,6 @@
 exports.beers = {
     carlitos: {
-        name: 'Carlito\'s Carmel Cafe',
+        name: 'Carlito\'s Caramel Cafe',
         description: '"Caramel Coffee Porter. Chas\' first brew."',
         style: 'Robust Porter',
         slug: 'carlitos',
