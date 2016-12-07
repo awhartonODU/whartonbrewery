@@ -1,4 +1,15 @@
 exports.beers = {
+    carlitos: {
+        name: 'Carlito\'s Carmel Cafe',
+        description: '"Caramel Coffee Porter. Chas\' first brew."',
+        style: 'Robust Porter',
+        slug: 'carlitos',
+        status: 'Not Yet Brewed',
+        logo: './images/carlitos.png',
+        abv: 'TBD',
+        recipe: './beers/carlitos.html',
+        untappd_id: 0
+    },
     flicka: {
         name: 'Friggin Flicka',
         description: '"Black IPA. Details withheld for now."',
